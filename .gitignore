@@ -1,0 +1,20 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+cleaned_hyst_data.csv
+Combined Hyst Data.xlsx 
+
+!code/
+!code/**
+
+git rm --cached "cleaned_hyst_data.csv"
+git rm --cached "Combined Hyst Data.xlsx"
+
+git add .gitignore
+
+git commit -m "Update .gitignore and stop tracking specific data files"
+
+git status
+
