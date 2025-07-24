@@ -1,0 +1,23 @@
+Analysis,p_value_formatted,method
+Rate of Intraoperative Complication by Gender Identity,1.000,Fisher's Exact Test for Count Data
+Rate of Intraoperative Complication by Insurance Status,0.369,Fisher's Exact Test for Count Data
+Rate of Intraoperative Complication by Race/Ethnicity,0.327,Fisher's Exact Test for Count Data
+Rate of Intraoperative Complication by Age,0.353,Welch Two Sample t-test
+Rate of Intraoperative Complication by BMI,0.128,Welch Two Sample t-test
+Rate of Intraoperative Complication by Age,0.637,Wilcoxon rank sum test with continuity correction
+Rate of Intraoperative Complication by BMI,0.099,Wilcoxon rank sum test with continuity correction
+Likelihood of Oophorectomy by Insurance Status,0.200,Fisher's Exact Test for Count Data
+Likelihood of Oophorectomy by Race/Ethnicity,0.346,Fisher's Exact Test for Count Data
+Likelihood of Oophorectomy by Pre-op Estrogen Use,0.231,Fisher's Exact Test for Count Data
+Likelihood of Oophorectomy by Post-op Estrogen Use,0.647,Fisher's Exact Test for Count Data
+Likelihood of Oophorectomy by Age,0.144,Welch Two Sample t-test
+Likelihood of Oophorectomy by BMI,0.816,Welch Two Sample t-test
+Likelihood of Oophorectomy by Age,0.281,Wilcoxon rank sum test with continuity correction
+Likelihood of Oophorectomy by BMI,0.458,Wilcoxon rank sum test with continuity correction
+Rate of Post-operative Readmission by Gender Identity,0.565,Fisher's Exact Test for Count Data
+Rate of Post-operative Readmission by Insurance Status,1.000,Fisher's Exact Test for Count Data
+Rate of Post-operative Readmission by Race/Ethnicity,1.000,Fisher's Exact Test for Count Data
+Rate of Post-operative Readmission by Age,0.983,Welch Two Sample t-test
+Rate of Post-operative Readmission by BMI,0.304,Welch Two Sample t-test
+Rate of Post-operative Readmission by Age,0.894,Wilcoxon rank sum test with continuity correction
+Rate of Post-operative Readmission by BMI,0.072,Wilcoxon rank sum test with continuity correction

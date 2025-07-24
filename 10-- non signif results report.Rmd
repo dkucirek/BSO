@@ -1,0 +1,47 @@
+
+---
+title: "Non-Significant Findings in Hysterectomy Outcomes Analysis"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(gt)
+
+# Run the script to generate the non-significant results if the file doesn't exist
+if (!file.exists("nonsignificant_results.csv")) {
+  source("09-- nonsignif results.R")
+}
+
+# Load the non-significant results
+nonsignificant_results <- read_csv("nonsignificant_results.csv")
+```
+
+## Summary of Non-Significant Results (p > 0.05)
+
+This table displays all the non-significant findings from the analysis of hysterectomy outcomes. 
+
+```{r nonsignificant_results_table, echo=FALSE}
+gt(nonsignificant_results) %>%
+  cols_label(
+    Analysis = "Analysis",
+    p_value_formatted = "P-Value",
+    method = "Test Method"
+  ) %>%
+  tab_header(
+    title = "Non-Significant Hysterectomy Outcomes"
+  ) %>%
+  tab_options(
+    table.font.size = px(14),
+    data_row.padding = px(5),
+    column_labels.font.weight = "bold",
+    heading.title.font.size = px(20),
+    row.striping.include_table_body = TRUE,
+    row.striping.background_color = "#f2f2f2"
+  ) %>%
+  tab_style(
+    style = cell_fill(color = "#e6e6e6"),
+    locations = cells_body(rows = seq(from = 2, to = nrow(nonsignificant_results), by = 2))
+  )
+```

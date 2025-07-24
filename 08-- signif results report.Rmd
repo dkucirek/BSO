@@ -1,0 +1,41 @@
+
+---
+title: "Significant Findings in Hysterectomy Outcomes Analysis"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(gt)
+
+# Run the script to generate the significant results if the file doesn't exist
+if (!file.exists("significant_results.csv")) {
+  source("07-- signif results.R")
+}
+
+# Load the significant results
+significant_results <- read_csv("significant_results.csv")
+```
+
+## Summary of Statistically Significant Results (p <= 0.05)
+
+This table displays all the statistically significant findings from the analysis of hysterectomy outcomes. 
+
+```{r significant_results_table, echo=FALSE}
+gt(significant_results) %>%
+  cols_label(
+    Analysis = "Analysis",
+    p_value_formatted = "P-Value",
+    method = "Test Method"
+  ) %>%
+  tab_header(
+    title = "Statistically Significant Hysterectomy Outcomes"
+  ) %>%
+  tab_options(
+    table.font.size = px(14),
+    data_row.padding = px(5),
+    column_labels.font.weight = "bold",
+    heading.title.font.size = px(20)
+  )
+```

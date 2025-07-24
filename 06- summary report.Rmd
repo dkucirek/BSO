@@ -1,0 +1,70 @@
+
+
+---
+title: "Hysterectomy Outcomes Analysis Summary"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Automatically run the data preparation script if the cleaned data file is missing.
+if (!file.exists("cleaned_hyst_data.csv")) {
+  source("01-data prep.R")
+}
+
+library(tidyverse)
+source("02-analysis funct.R")
+final_data <- read_csv("cleaned_hyst_data.csv")
+```
+
+## Introduction
+
+This report summarizes the analysis of hysterectomy outcomes, focusing on complications, oophorectomy, and readmission rates. The analysis is based on the cleaned dataset `cleaned_hyst_data.csv`.
+
+## Complication Analysis
+
+```{r complication_analysis, echo=FALSE}
+# Rerun the analysis from the script to display results here
+source("03- analysis for complications.R")
+
+# Display results in a more readable format
+cat("\n### Fisher's Exact Tests\n")
+knitr::kable(create_summary_table(complication_fisher_results), caption = "Fisher's Exact Test Results for Any Intraoperative Complication")
+
+cat("\n### T-tests\n")
+knitr::kable(create_summary_table(complication_t_test_results), caption = "T-test Results for Any Intraoperative Complication")
+
+cat("\n### Wilcoxon Tests\n")
+knitr::kable(create_summary_table(complication_wilcox_results), caption = "Wilcoxon Test Results for Any Intraoperative Complication")
+```
+
+## Oophorectomy Analysis
+
+```{r oophorectomy_analysis, echo=FALSE}
+source("04- ooph analysis.R")
+
+cat("\n### Fisher's Exact Tests\n")
+knitr::kable(create_summary_table(oophorectomy_fisher_results), caption = "Fisher's Exact Test Results for Oophorectomy")
+
+cat("\n### T-tests\n")
+knitr::kable(create_summary_table(oophorectomy_t_test_results), caption = "T-test Results for Oophorectomy")
+
+cat("\n### Wilcoxon Tests\n")
+knitr::kable(create_summary_table(oophorectomy_wilcox_results), caption = "Wilcoxon Test Results for Oophorectomy")
+```
+
+## Readmission Analysis
+
+```{r readmission_analysis, echo=FALSE}
+source("05-- readmit analysis.R")
+
+cat("\n### Fisher's Exact Tests\n")
+knitr::kable(create_summary_table(readmission_fisher_results), caption = "Fisher's Exact Test Results for Readmission")
+
+cat("\n### T-tests\n")
+knitr::kable(create_summary_table(readmission_t_test_results), caption = "T-test Results for Readmission")
+
+cat("\n### Wilcoxon Tests\n")
+knitr::kable(create_summary_table(readmission_wilcox_results), caption = "Wilcoxon Test Results for Readmission")
+```

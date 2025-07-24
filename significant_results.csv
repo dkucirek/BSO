@@ -1,0 +1,4 @@
+Analysis,p_value_formatted,method
+Likelihood of Oophorectomy by Gender Identity,1.974e-06,Fisher's Exact Test for Count Data
+Likelihood of Oophorectomy by Pre-op Testosterone Use,4.112e-07,Fisher's Exact Test for Count Data
+Likelihood of Oophorectomy by Post-op Testosterone Use,3.547e-06,Fisher's Exact Test for Count Data
